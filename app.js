@@ -26,7 +26,7 @@ const upload = multer({ storage: storage });
 app.use(express.json());
 
 // Send email endpoint
-app.post('/send-email', upload.single('file'), async (req, res) => {
+app.post('/send-email', async (req, res) => {
   try {
     // Validate the required fields
     const { to, cc, subject, body } = req.body;
