@@ -30,6 +30,7 @@ app.post('/send-email', upload.single('file'), async (req, res) => {
   try {
     // Validate the required fields
     const { to, cc, subject, body } = req.body;
+    console.log(req.body, "Req Body");
     if (!to || !subject || !body) {
       return res.status(400).send('Missing required fields: to, subject, or body.');
     }
