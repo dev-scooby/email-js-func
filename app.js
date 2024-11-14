@@ -107,13 +107,13 @@ app.post("/send-email", upload.single('file'), (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'process.env.EMAIL_USER',
-            pass: 'process.env.EMAIL_PASS',
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS,
         },
     });
 
     const mailOptions = {
-        from: 'process.env.EMAIL_USER',
+        from: process.env.EMAIL_USER,
         to: to,
         subject: `Admission Enquiry: ${childName} (${formRandomID})`,
         text: `You have received a new admission enquiry form from ${childName} for ${classForAdmission}.\n\nDetails:\nEmail: ${email}\nMobile: ${mobile}\nDate of Birth: ${dob}\nGender: ${gender}\nPrevious School: ${prevSchool}\nAddress: ${address}\nHow Did You Hear: ${howDidYouHear}\nParent: ${parentName}\nOccupation: ${occupation}`,
