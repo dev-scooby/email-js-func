@@ -92,6 +92,7 @@ const upload = multer({ storage: storage });
 
 app.post("/send-email", upload.single('file'), (req, res) => {
     const { to, childName, email, mobile, dob, gender, prevSchool, classForAdmission, parentName, occupation, howDidYouHear, address, formRandomID } = req.body;
+    console.log(req.body);
     const file = req.file;  // Get the uploaded file (PDF)
 
     if (!file) {
