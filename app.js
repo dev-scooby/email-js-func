@@ -115,8 +115,8 @@ app.post("/send-email", upload.single('file'), (req, res) => {
     const mailOptions = {
         from: process.env.EMAIL_USER,
         to: to,
-        // cc: "sankarngt@gmail.com",
-        cc: "cu4430179@gmail.com",
+        cc: "sankarngt@gmail.com",
+        // cc: "cu4430179@gmail.com",
         subject: `Admission Enquiry: ${childName} (${formRandomID})`,
         text: `You have received a new admission enquiry form from ${childName} for ${classForAdmission}.\n\nDetails:\nEmail: ${email}\nMobile: ${mobile}\nDate of Birth: ${dob}\nGender: ${gender}\nPrevious School: ${prevSchool}\nAddress: ${address}\nHow Did You Hear: ${howDidYouHear}\nParent: ${parentName}\nOccupation: ${occupation}`,
         attachments: [
